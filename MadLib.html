@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<div class="container">
+
+	<title>Mad Lib</title>
+
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script
+	 src="https://code.jquery.com/jquery-2.2.4.min.js"
+	 integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	 crossorigin="anonymous"></script>
+
+
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="jumbotron">
+	<div class="container">
+		<h1>Mad Lib Game</h1>
+		<p>Enter words to create your own mad lib...</p>
+	</div>
+
+</div>
+
+ <div class="row">
+	<div class="col-lg-12">
+	<table align="center">
+		<tbody>
+			<tr>
+			  <td align="right"><strong>Noun:</strong></td>
+			  <td align="left"><input type="text" placeholder="Noun" id="noun"><br>
+			  </td>
+			</tr>
+			<tr>
+			  <td align="right"><strong>Adjective:</strong></td>
+			  <td align="left"><input type="text" placeholder="Adjective" id="adjective"><br>
+			  </td>
+			</tr> 
+			<tr>
+			  <td align="right"><strong>Verb:</strong></td>
+			  <td align="left"><input type="text" placeholder="Verb" id="verb"><br>
+			  </td>
+			</tr>  
+			<tr>
+			  <td align="right"><strong>Adverb:</strong></td>
+			  <td align="left"><input type="text" placeholder="Adverb" id="adverb"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button class="btn btn-default" id="add-info" type="submit">Submit</button>
+		<button type="reset" class="btn btn-default">Reset</button>
+	</div>
+</div>
+
+
+<br><br>
+
+ <div class="row">
+<div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Your new Mad Lib...</h3>
+          </div>
+          <div class="panel-body" id="recent-member">
+ 
+            <p id="comment-display">Your new Mad Lib here...</p>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+</div>
+
+<script>
+// Capture Button Click
+    $("#add-info").on("click", function(event) {
+      // prevent page from refreshing when form tries to submit itself
+      event.preventDefault();
+
+
+var noun = $("#noun").val().trim();
+var adjective = $("#adjective").val().trim();
+var verb = $("#verb").val().trim();
+var adverb = $("#adverb").val().trim();
+
+
+console.log(noun);
+console.log(adjective);
+console.log(verb);
+console.log(adverb);
+
+
+result = "My "+adjective+" "+noun+" "+verb+" very "+adverb+".";
+
+console.log(result); 
+
+$("#comment-display").html(result);  
+
+</script>
+
+
+</body>
+</html>
